@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            margin-left: -35px;
+        }
+
+        hr {
+            border: none;
+            /* 기본 테두리 제거 */
+            height: 0.5px;
+            /* 수평선의 높이 */
+            background-color: rgb(226, 225, 225);
+            margin-top: -5px;
+            margin-bottom: -5px;
+        }
+
+        /* 상단 앨범 정보 */
+
+        #albumcover {
+            margin-right: 50px;
+            width: 400px;
+            height: 400px;
+            border-radius: 15px;
+            z-index: 1;
+
+        }
+
+        #vinyl {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            z-index: -1;
+            transform: translate(-145PX, 10PX);
+
+
+
+        }
+
+        .albuminfo1 {
+            float: left;
+            margin-top: 10px;
+            z-index: 1;
+        }
+
+        .albuminfo2 {
+            float: left;
+            margin-right: 40px;
+            z-index: 1;
+            transform: translate(110PX, 0PX);
+            margin-bottom: 20px;
+
+        }
+
+        .albuminfo3 {
+            float: left;
+            z-index: 1;
+            transform: translate(90PX, 0PX);
+
+        }
+
+        #albumname {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 45px;
+        }
+
+        #artistname {
+            margin: 5px 0px 25px 2px;
+            color: #ff3f6c;
+            font-size: 30px;
+        }
+
+        #albuminfotable {
+            margin-top: 20px;
+            width: 340px;
+        }
+
+        #albuminfotable tr {
+            height: 45px;
+
+        }
+
+        #albuminfotable tr td {
+            font-size: 16.5px;
+            font-weight: bold;
+            color: #696767;
+        }
+
+        #keyword {
+            height: 50px;
+            vertical-align: top;
+        }
+
+        #keywordstyle {
+            vertical-align: top;
+        }
+
+        #inputcart {
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            cursor: pointer;
+
+        }
+
+        #inputdown {
+            width: 22px;
+            height: 22px;
+            margin-top: 7px;
+            cursor: pointer;
+        }
+
+        #playbtn {
+            width: 110px;
+            height: 110px;
+            margin-top: 22px;
+            cursor: pointer;
+        }
+
+        #lovebtn {
+            width: 65px;
+            height: 65px;
+            margin: 15px 0px 0px 23px;
+            cursor: pointer;
+        }
+
+        /* 앨범 상단 정보 끝 */
+
+
+
+
+
+
+        /* 확대, 곡 길이, 전체재생 */
+        .biggertxt {
+            margin-left: 150px;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #2b2a2a;
+            cursor: pointer;
+            font-weight: 700;
+            border: 1px solid rgb(207, 203, 203);
+            width: 115px;
+            height: 28px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+        }
+
+        #biggerbtn {
+            width: 22px;
+            height: 22px;
+            margin-left: 8px;
+            margin-top: 5px;
+            cursor: pointer;
+            transform: translate(-674px);
+
+        }
+
+
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #albuminfotable2{
+            padding-left: 10px;
+        }
+
+
+        /* 상세정보*/ 
+        .album-info-container {
+            margin-top: 30px;
+            font-size: 16px;
+            margin-bottom: 30px;
+
+        }
+
+
+        #albuminfotable2 tr {
+            height: 33px;
+        }
+
+
+        .album-info-container #albuminfotable2 {
+            display: none;
+            /* 초기에 테이블 숨김 */
+        }
+
+        .album-info-container.open #albuminfotable2 {
+            display: table;
+            /* 테이블을 표시 */
+        }
+
+        .album-info-container.open .arrow {
+            transform: rotate(90deg);
+            /* 화살표 회전 */
+        }
+
+        #albumdetail {
+            cursor: pointer;
+            color: #ff3f6c;
+            font-weight: 1000;
+            font-size: 23px;
+            
+        }
+
+
+
+        /* 앨범 소개 */
+        .album-intro-container .album-intro-text {
+            display: none;
+            /* 초기에 텍스트 숨김 */
+            padding: 10px;
+            /* 선택적인 스타일링 */
+            font-size: 16px;
+
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+            line-height: 1.7;
+            border: none;
+            background-color: transparent;
+            padding-left: 10px;
+
+
+        }
+
+        .album-intro-container.open .album-intro-text {
+            display: block;
+            /* 텍스트 표시 */
+        }
+
+        .album-intro-container.open .arrow {
+            transform: rotate(90deg);
+            /* 화살표 회전 */
+        }
+
+        #albumintro {
+            cursor: pointer;
+            color: #ff3f6c;
+            font-weight: 1000;
+            font-size: 22px;
+        }
+
+
+
+
+
+
+
+
+
+
+        /* 모달 스타일링 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            display: block;
+            margin: auto;
+            max-width: 800px;
+            max-height: 600px;
+        }
+
+        .close {
+            color: #fff;
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <div>
+            <div class="wholeinfo">
+                <div class="albuminfo1">
+                    <img src="resources/testimg.jpg" id="albumcover">
+                </div>
+                <div class="albuminfo2">
+                    <div id="albumname">
+                        <b>Song Name</b>
+                    </div>
+                    <div>
+                        <h3 id="artistname">Artist</h3>
+                    </div>
+                    <hr color="">
+                    <table id="albuminfotable">
+                        <tr>
+                            <td width="120px">앨범</td>
+                            <td width="170px">Album name</td>
+                        </tr>
+                        <tr>
+                            <td>발매일</td>
+                            <td>2020.05.05</td>
+                        </tr>
+                        <tr>
+                            <td>장르</td>
+                            <td>트로트</td>
+                        </tr>
+                        <tr>
+                            <td id="keyword">키워드</td>
+                            <td id="keywordstyle">잔잔함, 고요함, 기발함, 신선함, 암울함, 어색함</td>
+                        </tr>
+                        <tr>
+                            <td>곡 담기/다운</td>
+                            <td><img src="resources/addplaylistbtn.png" id="inputcart">
+                                <img src="resources/downloadbtn.png" id="inputdown">
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <hr color="">
+                </div>
+
+                <div class="albuminfo3">
+                    <img src="resources/playbtn.png" id="playbtn">
+                    <br>
+                    <img src="resources/lovebtn.png" id="lovebtn">
+                </div>
+
+            </div>
+            <br clear="both">
+
+        </div>
+
+
+
+
+
+
+        <div class="container">
+            <div class="biggertxt" onclick="openModal()">이미지 확대</div>
+            <img src="resources/biggerbtn.png" id="biggerbtn" onclick="openModal()">
+
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img src="" id="modalImage" class="modal-content">
+        </div>
+
+
+
+        <br clear="both">
+
+        <script>
+            var originalWidth;
+            var originalHeight;
+
+            function openModal() {
+                var modal = document.getElementById("myModal");
+                var modalImage = document.getElementById("modalImage");
+                var albumcover = document.getElementById("albumcover");
+
+                if (modal.style.display === "block") {
+                    closeModal();
+                } else {
+                    originalWidth = albumcover.clientWidth;
+                    originalHeight = albumcover.clientHeight;
+
+                    modalImage.src = albumcover.src;
+                    modal.style.display = "block";
+                }
+            }
+
+            function closeModal() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="album-info-container open">
+            <h3 id="albumdetail">크레딧 <span style="font-size: 30px;"> &raquo;</span></h3>
+            <table id="albuminfotable2">
+                <tr>
+                    <td width="110px"><b>앨범명</b></td>
+                    <td width="170px">월간 윤종신 7월호</td>
+                </tr>
+                <tr>
+                    <td><b>아티스트</b></td>
+                    <td>윤종신</td>
+                </tr>
+                <tr>
+                    <td><b>발매사</b></td>
+                    <td>Dreamus</td>
+                </tr>
+                <tr>
+                    <td><b>기획사</b></td>
+                    <td>월간 윤종신</td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            const albumDetail = document.getElementById('albumdetail');
+            const albumContainer = document.querySelector('.album-info-container');
+
+            albumDetail.addEventListener('click', function () {
+                albumContainer.classList.toggle('open'); // 클래스 토글
+            });
+        </script>
+
+        <div class="album-intro-container open">
+            <h3 id="albumintro">가사 <span style="font-size: 30px;"> &raquo;</span></h4>
+                <pre class="album-intro-text">
+주제는 주체 말해도 몰라 
+묻지마 너네 오빠의 큰 몰락 
+난 준비 됨 혼자서 돈 따 
+물론 내 동료는 사랑해 소수만 
+
+데리고 나가서 뿌려 내 발품에 정보와 통장 안 
+물론 이 밸런스엔 겸손함 
+지금 팔짱 낀 병신 돈 성적은 저조하지 
+
+걔네 사장은 정신병 걸렸지 
+홍보빌 써도 좆밥은 없지 먹을것이 퍼트려 걸음걸이 
+건드려 돈주머니 터뜨려 노는 몸이 
+
+아끼는 머리 
+나무도 보되 숲 보네 더 멀리 
+술처먹되 고삔 
+벌 때만 풀어놔 돈버는 고민 외 
+논리와 노니 내 통장 겁 없지 
+
+너네 형 곳간에 불평불만 
+분배하는 꿈이 너의 꿈 
+계속 꾸밈 없이 그렇게 말아먹어 븅신아
+술술 나오는 말보다 행동이 맞지 
+주둥아리로만 돈 버는건 부럽지만 그 텅빈 비전에 수긍하긴
+
+One thing I've learned, 
+love can change with the seasons 
+돈이나 벌어 
+돈은 안바뀌는 기분 
+
+나를 갈구던 선생보다 너무 많이 벌어 
+걔네 하는 말에 맞는 말도 있었지만 걸러 
+지나간 시간들에 구속되긴 시간 없어 
+욕망론에 빚춰볼 때 다음 단곌 찾아 걸어 
+
+그 형들은 좆밥이였어 
+본인 띄우려고 주변 평판을 낮춰 
+좀 까칠해졌어 
+물론 돈 얘기라면 손 모아 경청해 착석 
+
+관심이 없어 다음 테레비에 너네 떼거지들 미래의 제안서 
+나도 열련 있지만 먼저 내 밥그릇 단단하게 가공 
+
+아직 프리시즌 다시 뱉고 벌어 
+내 꿈에 개꿈 없고 대충 써도 
+너네 셋 꿈 썰어
+니 친구들 개좆밥 병신 
+안섞여도 챙겼어 즉  
+
+너네 한꺼번에 들끓어도 좆되거나 죽돼 어
+줏대 없이 쓴 가사에 무댄 푸대접 
+그걸 쳐먹고 배부른 개똥통 수준에 개똥들 뜰만해요
+
+One thing I've learned, 
+love can change with the seasons 
+돈이나 벌어 
+돈은 안바뀌는 기분
+    </pre>
+        </div>
+
+        <script>
+            const albumIntro = document.getElementById('albumintro');
+            const albumIntroContainer = document.querySelector('.album-intro-container');
+
+            albumIntro.addEventListener('click', function () {
+                albumIntroContainer.classList.toggle('open'); // 클래스 토글
+            });
+        </script>
+    </div>
+
+
+    <img src="resources/vinyl.png" id="vinyl">
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+body {
+    background-color: black;
+    width: 100%;
+    height: 961px;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 */
+#zheader {
+    width: 100%;
+    height: 35px;
+    margin-top: 12px;
+    padding: 0px;
+    position: fixed;
+    z-index: 10;
+}
+
+.zink {
+    font-family: Inklination Mono TRIAL;
+    font-size: 29px;
+    
+    font-weight: 500;
+}
+
+.zpixel {
+    font-family: Pixter-Terminal;
+    
+    font-size: 29px;
+    letter-spacing: 1.0px;
+
+}
+
+
+#ztitle {
+    width: 176px;
+    height: 26px;
+    margin-right: 26px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+#zlive {
+    width: 314px;
+    height: 31px;
+    cursor: pointer;
+}
+
+/*언더바 깜빡임 */
+@keyframes blinking {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#zlive2 {
+    animation: blinking 1.1s infinite;
+    font-family: Pixter-Terminal;
+    
+    font-size: 26px;
+    cursor: pointer;
+
+}
+
+/* 언더바 깜빡임 끝*/
+#zmainblank {
+    margin-right: 960px;
+}
+
+#ztour {
+    width: 63px;
+    height: 31px;
+    margin-right: 35px;
+}
+
+#zshop {
+    width: 63px;
+    height: 31px;
+    margin-right: 39px;
+
+}
+
+#zleftbtn {
+    width: 49px;
+    height: 25px;
+    display: inline;
+    cursor: pointer;
+}
+
+#zrightbtn {
+    width: 49px;
+    height: 25px;
+    display: none;
+    bottom: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+/* 헤더 끝*/
+
+/*로딩동영상*/
+#zfirstvid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 20;
+}
+
+/*기본 재생 동영상*/
+#zmaindummy {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+}
+
+.zvideos>video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    right: 0px;
+    display: none;
+}
+
+/* 버튼 */
+.zmainbtn {
+    width: 200px;
+    height: 86px;
+    font-size: 26px;
+    text-align: left;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.zbtnspan {
+    line-height: 0.1;
+    letter-spacing: -0.3px;
+}
+
+#zdummybtn {
+    position: absolute;
+    bottom: 670px;
+    left: 30px;
+    z-index: 1;
+    
+}
+
+#zdevilishbtn {
+    position: absolute;
+    bottom: 660px;
+    left: 510px;
+    z-index: 1;
+}
+
+#zstarfacebtn {
+    position: absolute;
+    bottom: 490px;
+    left: 960px;
+    z-index: 1;
+}
+
+#z90sbtn {
+    width: 290px;
+    position: absolute;
+    bottom: 660px;
+    left: 1450px;
+    z-index: 1;
+}
+
+#zpowerfreaksbtn {
+    position: absolute;
+    width: 230px;
+    bottom: 290px;
+    left: 30px;
+    z-index: 1;
+}
+
+#zclearbonesbtn {
+    position: absolute;
+    width: 210px;
+    bottom: 150px;
+    left: 510px;
+    z-index: 1;
+}
+
+#zbruiseboybtn {
+    position: absolute;
+    z-index: 1;
+    left: 1450px;
+    bottom: 150px;
+
+}
+
+/*버튼 끝 */
+
+/*호버했을때 크레딧*/
+#zcreditdummy, #zcreditdummy2,#zcreditdummy3, #zcreditdummy4, #zcreditdummy6{
+    position: absolute;
+    font-family: Inklination Mono TRIAL;
+    font-size: 22px;
+    
+    font-weight: 500;
+    z-index: 1;
+    top: 780px;
+    left:30px;
+    line-height: 1.0;
+}
+#zcreditdummy5, #zcreditdummy7{
+    position: absolute;
+    font-family: Inklination Mono TRIAL;
+    font-size: 22px;
+    
+    font-weight: 500;
+    z-index: 1;
+    top: 890px;
+    left:30px;
+    line-height: 1.0;
+}
+
+
+
+/* 버튼 움직이는 속도 조정*/
+#zdummybtn, #zdevilishbtn, #zstarfacebtn, #z90sbtn, #zpowerfreaksbtn, #zclearbonesbtn, #zbruiseboybtn  {
+    transition: transform 0.07s ease-in-out;
+  }
+/*play글자랑 위 글자 간격 벌리기*/
+#zplayButton,#zplayButton2,#zplayButton3,#zplayButton4,#zplayButton5,#zplayButton6,#zplayButton7{
+    margin-top: 20px; 
+}
+.zmainbtn {
+    cursor: pointer;
+  }
+
+  #zgreenimg {
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left:0px;
+    background-color: #a4cdbf;
+    
+    width: 1903px;
+    height: 940px;
+    opacity: 0.7;
+  }

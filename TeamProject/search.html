@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>KREAM|한정판 거래의 FLEX</title>
+
+    <style>
+         div{
+            /* 
+                지금부터 지정하는 가로세로길이는 테두리까지 포함한 길이임을 의미
+            */
+         
+        }
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        ul, li {
+            list-style:none;
+        }
+        .search{
+            padding-top: 50px;
+            width: 800px;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .input_search{
+            width:770px;
+            overflow: hidden;
+            white-space: nowrap;
+             font-size: 20px;
+             font-weight: 300;
+            color: gray;
+            line-height: 29px;
+            padding: 0 13px 0 1px;
+            letter-spacing: -.015em;
+
+        }
+        input{
+            outline: 0;
+            border: 0;
+            resize: none;
+            border-radius: 0;
+            background-color: transparent;
+        }
+        .jb-division-line {
+            border-top: 3px solid black;
+             margin: 0px auto;
+            width: 800px;        
+}
+
+.serach_title{
+            padding-top: 10px;
+            width: 800px;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto;
+            overflow: hidden;
+}
+.title{
+    font-size: 16px;
+    font-weight: 700;
+}
+.search_card{
+    line-height: 13px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.search_card_tag {
+    max-width: 142px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    letter-spacing: -.21px;
+    color: rgba(34,34,34,.8);
+    background: #f4f4f4;
+    border: 1px solid #ebebeb;
+    border-radius: 20px;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 20px 8px 12px 0px;
+    position: relative;
+    text-decoration: none;
+   
+}
+
+.layer_search_items{
+            padding-top: 10px;
+            width: 800px;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 30px;
+}
+.title1{
+    font-size: 13px;
+    color: rgba(34,34,34,.8);
+}
+
+.search_card_ranking{
+            padding-top: 10px;
+            width: 800px;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 8px;
+            column-count: 2;
+            list-style: none;
+            line-height: 17px;
+            font-size: 14px;
+}
+
+.search_object .search_card_ranking li a{
+    color:black;
+    text-decoration: none;
+}
+.item1{
+    padding: 4px 0 16px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: flex;
+}
+.rank_idex{
+    font-weight: 600;
+    margin-right: 6px;
+}
+.ranking_title{
+    font-weight: 400;
+    margin-right: 6px;
+    max-width: 108px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    white-space: nowrap;
+}
+.title_brand{
+    font-size: 16px;
+    font-weight: 700;
+}
+.layer_search_title_wrap{
+            padding-top: 10px;
+            width: 800px;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 30px;
+}
+        .img_items{
+            padding-top: 10px;
+            width: 800px;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 30px;
+           
+} 
+        
+
+        .img_items ul li
+        {
+             text-align: center;
+             display: inline-block;
+        }
+        a{
+            text-decoration: none;
+             color:black;
+        }
+            .img_items p{
+            font-size: 12px;
+            margin: 0px 50px 10px;
+        }
+
+         .img_items div {
+         width: 180px;
+         height: 100px;
+         float: left;
+         margin-left: 3px;
+         margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+ <div class="content">
+    <div class="search">
+        <input type="text" placeholder="브랜드명,모델명,모델번호 등" class="input_search">
+    </div>
+    <br>
+    <div class="jb-division-line"></div>
+
+    <div class="serach_title">
+        <span class="title">추천 검색어</span>
+    </div>
+
+    <div class="search_card">
+        <a href="#" class="search_card_tag">디젤</a>
+        <a href="#" class="search_card_tag">크림 단독</a>
+        <a href="#" class="search_card_tag">스캇</a>
+        <a href="#" class="search_card_tag">가젤</a>
+        <a href="#" class="search_card_tag">마똉킴</a>
+        <a href="#" class="search_card_tag">에어팟</a>
+        <a href="#" class="search_card_tag">COS 백</a>
+        <a href="#" class="search_card_tag">리퍼비시</a>
+        <a href="#" class="search_card_tag">반팔</a>
+    </div>
+</div>
+
+
+<div class="layer_search_card">
+    <div class="layer_search_items">
+        <div class="layer_search_title">
+            <span class="title">인기 검색어</span>
+            <span class="title1">00.00 00:00 기준</span>
+        </div>
+    </div>
+<div class="search_object">
+    <ol class="search_card_ranking">
+        <li class="item1">
+            <span class="rank_idex">1&nbsp</span>
+            <a href="#"><span class="ranking_title">나이키</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">2&nbsp</span>
+            <a href="#"><span class="ranking_title">스투시</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">3&nbsp</span>
+            <a href="#"><span class="ranking_title">반팔</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">4&nbsp</span>
+            <a href="#"><span class="ranking_title">아식스</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">5&nbsp</span>
+            <a href="#"><span class="ranking_title">에어포스</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">6&nbsp</span>
+            <a href="#"><span class="ranking_title">뉴발란스</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">7&nbsp</span>
+            <a href="#"><span class="ranking_title">조던</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">8&nbsp</span>
+            <a href="#"><span class="ranking_title">슈프림</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">9&nbsp</span>
+            <a href="#"><span class="ranking_title">조던1</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">10&nbsp</span>
+            <a href="#"><span class="ranking_title">아디다스</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">11&nbsp</span>
+            <a href="#"><span class="ranking_title">가젤</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">12&nbsp</span>
+            <a href="#"><span class="ranking_title">샤넬</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">13&nbsp</span>
+            <a href="#"><span class="ranking_title">트래비스 스캇</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">14&nbsp</span>
+            <a href="#"><span class="ranking_title">살로몬</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">15&nbsp</span>
+            <a href="#"><span class="ranking_title">덩크</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">16&nbsp</span>
+            <a href="#"><span class="ranking_title">샌들</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">17&nbsp</span>
+            <a href="#"><span class="ranking_title">미니백</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">18&nbsp</span>
+            <a href="#"><span class="ranking_title">키링</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">19&nbsp</span>
+            <a href="#"><span class="ranking_title">삼바</span></a>
+        </li>
+        <li class="item1">
+            <span class="rank_idex">20&nbsp</span>
+            <a href="#"><span class="ranking_title">스캇</span></a>
+        </li>
+    </ol>
+
+</div>
+
+<div class="layer_search_title_wrap">
+<span class="title_brand">추천 브랜드</span>
+</div>
+
+<div class="img_items">
+    <div class="img1"><a href="#"><img id="img" src="https://kream-phinf.pstatic.net/MjAyMzAzMTZfMTY4/MDAxNjc4OTQ4MzM3ODA3.-J6sAWFJJPPDO9G6LfRl5QUcI5N5zrlZvwj-pB2IXWgg.tRrm9hjCnxfu_prbhvXI5nc34oZcmqHdHFIMI1EHG1sg.JPEG/a_4aa4a96d898e45349df90d312427be3f.jpg?type=m_webp" width="150" height="80"><p>STU</p></a></div>
+    <div class="img2"><a href="#"><img id="img" src="https://kream-phinf.pstatic.net/MjAyMzAzMjJfMjAx/MDAxNjc5NDYyMjgwNDA0.S7hVP845Mt9xkyDWVwgP28yQG1Kp9KNkAwOPzfaaFKYg.2cH-9tw-2cJhbIvfh-j_ZEU4CQeMufagYQjalS1_vicg.JPEG/a_95079244c44440a4a332026e2013b295.jpg?type=m_webp" width="150" height="80"><p>폴리테루</p></a></div>
+    <div class="img3"><a href="#"><img id="img" src="https://kream-phinf.pstatic.net/MjAyMzAzMjJfMTEz/MDAxNjc5NDYyMjk2NTcw.J5Ox9iXg659SXltRMlq79eiTS41aZP707wWroiEoxdAg.0K4h7lk59U3gSRFTV6DNr2TVa8HezdxUFZN6yAJoyqMg.JPEG/a_a03907925e1943b1a021fd9c0281d38a.jpg?type=m_webp" width="150" height="80"><p>아미스</p></a></div>
+    <div class="img4"><a href="#"><img id="img" src="https://kream-phinf.pstatic.net/MjAyMzAzMjJfMjM5/MDAxNjc5NDYyMzE3NDg3.z8lJNHzkTmFwO87EtG9zYI3W7hZBTLRdVeYnAlgEq0Qg.jQBw8dzHUOIUMC8WgwsMbaER1Z1mG3ENgImJwwdgJZQg.JPEG/a_e268c495447d4db5b035397dd75226dc.jpg?type=m_webp" width="150" height="80"><p>웨어비니스</p></a></div>
+</div>
+<br><br>
+
+
+</div>
+<br><br><br><br><br><br>
+
+</body>
+</html>

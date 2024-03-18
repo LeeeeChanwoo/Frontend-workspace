@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: auto;
+            margin-top: 50px;
+            transform: translate(-102px);
+        }
+
+        /* 메인 글씨 */
+        #clamemaintext {
+            display: flex;
+            justify-content: center;
+            font-size: 35px;
+            transform: translate(120px);
+        }
+
+        /* c/s 종류 버튼 */
+        .wholeclamemenu {
+            display: flex;
+            justify-content: center;
+            margin-left: 200px;
+            margin-bottom: 30px;
+
+
+        }
+
+
+        .clamemenu {
+            height: 50px;
+            width: 190px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 19px;
+            border-radius: 20px;
+            transition: transform 0.1s ease-in-out;
+            margin-bottom: 40px;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 35px;
+
+        }
+
+        .clamemenu a {
+            text-decoration: none;
+            color: black;
+
+        }
+
+        .clamemenu a:hover {
+            color: #fa5d82;
+        }
+
+        #clamechoicemenu {
+            background-color: #fa5d82;
+        }
+
+        #clamechoicemenu a {
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        /* c/s 종류 버튼 끝*/
+
+
+
+
+
+
+        /* 검색창, 분류 */
+        .faqkind {
+            width: 230px;
+            height: 45px;
+            font-size: 15px;
+            display: flex;
+            border-radius: 5px;
+            border-color: #d6d6d6;
+            margin-left: 110px;
+
+
+        }
+
+        #faq3search {
+            display: flex;
+            justify-content: center;
+        }
+
+        #faq3search input {
+            width: 450px;
+            height: 50px;
+            border-color: rgb(223, 219, 219);
+            transform: translate(100px, -10px);
+            border-radius: 10px;
+            font-size: 16px;
+            box-shadow: none;
+            border: 1px solid rgb(231, 230, 230);
+
+
+        }
+
+        #faq3search img {
+            width: 25px;
+            height: 25px;
+            transform: translate(120px, 5px);
+            margin-bottom: 70px;
+        }
+
+        /* 검색창, 분류 끝 */
+
+
+
+
+
+
+        /* faq 테이블*/
+        #faqtable {
+            text-align: center;
+            border-collapse: collapse;
+            transform: translate(100px);
+            cursor: pointer;
+
+        }
+
+        #faqtable thead tr {
+            background-color: #f3f3f3;
+            font-size: 16px;
+            color: #7e7c7c;
+            height: 45px;
+
+        }
+
+
+        #faqtable tr {
+
+            height: 58px;
+            font-weight: 500;
+            font-size: 17px;
+
+        }
+
+        .categorybold {
+            font-weight: 700;
+        }
+
+
+        #faqtable tbody tr:nth-child(even) {
+            background-color: #fff8fa;
+            /* 짝수 행 배경색 */
+
+        }
+
+        #faqtable tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+            /* 홀수 행 배경색 */
+        }
+
+        #faqtable tbody tr td:first-child {
+            border-top-left-radius: 10px;
+            /* 첫 번째 td의 상단 왼쪽 모서리 반경 설정 */
+            border-bottom-left-radius: 10px;
+        }
+
+        #faqtable tbody tr td:last-child {
+            border-top-right-radius: 10px;
+            /* 마지막 td의 상단 오른쪽 모서리 반경 설정 */
+            border-bottom-right-radius: 10px;
+        }
+
+        #faqtable thead tr th:first-child {
+            border-top-left-radius: 10px;
+            /* 첫 번째 td의 상단 왼쪽 모서리 반경 설정 */
+            border-bottom-left-radius: 10px;
+        }
+
+        #faqtable thead tr th:last-child {
+            border-top-right-radius: 10px;
+            /* 마지막 td의 상단 오른쪽 모서리 반경 설정 */
+            border-bottom-right-radius: 10px;
+        }
+
+        #faqtable>tbody>tr:hover {
+            background: #fa5d82;
+            cursor: pointer;
+            color: white;
+        }
+
+        .faq-row {
+    
+    transition: background-color 0.1s ease-in-out;
+}
+
+
+
+
+
+/* 상세 faq 내용*/
+        .faq-content {
+            display: none;
+            background-color: #f3f3f3;
+        }
+
+        .faq-content td {
+            padding: 0px;
+            border-radius: 5px;
+        }
+
+        .faq-row.clicked+.faq-content {
+            display: table-row;
+        }
+
+        .faq-detail-content {
+            width: 950px;
+            height: 100px;
+            padding-left: 50px;
+            padding-top: 30px;
+            text-align: left;
+
+        }
+
+        .faq-detail-content:hover {
+            background-color: #fff8fa;
+            color: black;
+            border: 0px solid;
+            cursor: auto;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <h1 id="clamemaintext">고객센터</h1>
+
+    <div class="wholeclamemenu">
+        <div class="clamemenu"><a href="">공지사항</a></div>
+        <div class="clamemenu" id="clamechoicemenu"><a href="">FAQ</a></div>
+        <div class="clamemenu"><a href="">1:1문의</a></div>
+        <div class="clamemenu"><a href="">나의 문의내역</a></div>
+    </div>
+
+    <div id="faq3search">
+        <input type="text" name="faq3search" placeholder=" &nbsp;&nbsp;&nbsp;로그인이 되지 않아요.">
+        <img src="resources/search.png">
+    </div>
+
+
+    <select name="faqkind" class="faqkind">
+        <option value="1">회원정보/로그인</option>
+        <option value="2">서비스/이용권</option>
+        <option value="3">결제/해지/환불</option>
+        <option value="4">오류</option>
+        <option value="5">이벤트</option>
+        <option value="6">기타</option>
+    </select>
+    <br>
+
+
+
+
+
+
+
+
+    <table id="faqtable">
+        <thead>
+            <tr>
+                <th width="60">번호</th>
+                <th width="200">분류</th>
+                <th width="550">제목</th>
+                <th width="50">조회수</th>
+                <th width="120">등록일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="faq-row">
+                <td>4</td>
+                <td class="categorybold">이벤트</td>
+                <td class="faq-title">참여가 안돼요</td>
+                <td>0</td>
+                <td>2023.07.06</td>
+            <tr class="faq-content">
+                <td colspan="5">
+                    <div class="faq-detail-content">이벤트에 참여하는 방법은 다음과 같습니다...</div>
+                </td>
+            </tr>
+            </tr>
+            <tr class="faq-row">
+                <td>3</td>
+                <td class="categorybold">기타</td>
+                <td class="faq-title">재생이 안돼요</td>
+                <td>0</td>
+                <td>2023.07.06</td>
+            <tr class="faq-content">
+                <td colspan="5">
+                    <div class="faq-detail-content">이벤트에 참여하는 방법은 다음과 같습니다...</div>
+                </td>
+            </tr>
+            </tr>
+            <tr class="faq-row">
+                <td>2</td>
+                <td class="categorybold">회원정보/로그인</td>
+                <td class="faq-title">로그인이 안돼요</td>
+                <td>0</td>
+                <td>2023.07.06</td>
+            <tr class="faq-content">
+                <td colspan="5">
+                    <div class="faq-detail-content">이벤트에 참여하는 방법은 다음과 같습니다...</div>
+                </td>
+            </tr>
+            </tr>
+            <tr class="faq-row">
+                <td>1</td>
+                <td class="categorybold">이용권</td>
+                <td class="faq-title">결제가 되지 않아요</td>
+                <td>0</td>
+                <td>2023.07.06</td>
+            <tr class="faq-content">
+                <td colspan="5">
+                    <div class="faq-detail-content">이벤트에 참여하는 방법은 다음과 같습니다...</div>
+                </td>
+            </tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const faqRows = document.querySelectorAll('.faq-row');
+
+        faqRows.forEach((row) => {
+            row.addEventListener('click', () => {
+                row.classList.toggle('clicked');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean-Dawson</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="content.js"></script>
+    <script src="main.js"></script>
+    <link rel="icon" href="imgdawson/rightbtn.PNG">
+    <link rel="stylesheet" href="content.css">
+    <link href="main.css" rel="stylesheet">
+    <style>
+        #dong{
+            position: absolute;
+            top: 940px;
+        }
+    </style>
+</head>
+<body>
+    <!--로딩 비디오-->
+    <video id="zfirstvid" autoplay>
+    <source src="imgdawson/loading.mp4" type="video/mp4">
+    </video>
+
+    <!--전체-->
+    <div id="whole" style="color: white;">
+    <!--헤더-->
+    <div id="zheader">
+       <span id="ztitle" class="zink">JEAN DAWSON</span>
+       <span id="zlive" class="zpixel">NOW &nbsp;LIVE :&nbsp;&nbsp; PIXEL &nbsp;BATH </span>
+       <span id="zlive2">_</span>
+       <span id="zmainblank"></span>
+       <span id="ztour" class="zpixel">TOUR</span>
+       <span id="zshop" class="zpixel">SHOP</span>
+       <!--화면 반전 버튼-->
+       <span id="zswitchbtn"><img src="imgdawson/leftbtn.PNG" id="zleftbtn"></span>
+       <span id="zswitchbtn2"><img src="imgdawson/rightbtn.png" id="zrightbtn"></span>
+    </div>
+    <!--기본으로 나오는 비디오-->
+    <video src="imgdawson/Dummy.mp4" id="zmaindummy" autoplay loop></video>
+    <div id="zgreenimg" style="display: none;"></div>
+    <!--호버 했을 때 나오는 비디오-->
+    <div class="zvideos">
+       <video src="imgdawson/Devilish.mp4" id="zmaindevilish" autoplay loop></video>
+       <video src="imgdawson/Starface.mp4" id="zmainstarface" autoplay loop></video>
+       <video src="imgdawson/GREENSCREEN.mp4" id="zmaingreen" autoplay loop></video>
+       <video src="imgdawson/PowerFreaks.mp4" id="zmainpower" autoplay loop></video>
+       <video src="imgdawson/ClearBones.mp4" id="zmainclear" autoplay loop></video>
+       <video src="imgdawson/BRUISEBOY.mp4" id="zmainbruiseboy" autoplay loop></video>
+    </div>
+    <!--호버 비디오 문구-->
+    <button style="color: white;" id="zdummybtn" class="zmainbtn" onmouseover="showPlayButton(); showPlayButton11(event)" onmouseout="hidePlayButton(); hidePlayButton11()">
+       <span class="zpixel zbtnspan">DUMMY</span><br>
+       <span class="zpixel zbtnspan">00 : 03 : 07</span>
+       <span id="zplayButton" class="zpixel zbtnspan" style="display: none;">[ PLAY ]</span>
+    </button>
+    <button style="color: white;" id="zdevilishbtn" class="zmainbtn" onmouseover="showPlayButton2(); showPlayButton22(event)" onmouseout="hidePlayButton2(); hidePlayButton22()">
+       <span class="zpixel zbtnspan">DEVILISH</span><br>
+       <span class="zpixel zbtnspan">00 : 01 : 34</span>
+       <span id="zplayButton2" class="zpixel zbtnspan" style="display: none;">[ PLAY ]</span>
+    </button>
+    <button style="color: white;" id="zstarfacebtn" class="zmainbtn" onmouseover="showPlayButton3(); showPlayButton33(event)" onmouseout="hidePlayButton3(); hidePlayButton33()">
+       <span class="zpixel zbtnspan">STARFACE*</span><br>
+       <span class="zpixel zbtnspan">00 : 01 : 34</span>
+       <span id="zplayButton3" class="zpixel zbtnspan" style="display: none;">[ PLAY ]</span>
+    </button>
+    <button style="color: white;" id="z90sbtn" class="zmainbtn" onmouseover="showPlayButton4(); showPlayButton44(event)" onmouseout="hidePlayButton4(); hidePlayButton44()">
+       <span class="zpixel zbtnspan">90'S GREEN SCREEN</span><br>
+       <span class="zpixel zbtnspan">00 : 05 : 42</span><br>
+       <span id="zplayButton4" class="zpixel zbtnspan" style="display: none;">[ PLAY ]</span>
+    </button>
+    <button style="color: white;" id="zpowerfreaksbtn" class="zmainbtn" onmouseover="showPlayButton5(); showPlayButton55(event)" onmouseout="hidePlayButton5(); hidePlayButton55()">
+       <span class="zpixel zbtnspan">POWER FREAKS</span><br>
+       <span class="zpixel zbtnspan">00 : 02 : 15</span><br>
+       <span id="zplayButton5" class="zpixel zbtnspan" style="display: none;">[ PLAY ]</span>
+    </button>
+    <button style="color: white;" id="zclearbonesbtn" class="zmainbtn" onmouseover="showPlayButton6(); showPlayButton66(event)" onmouseout="hidePlayButton6(); hidePlayButton66()">
+       <span class="zpixel zbtnspan">CLEAR BONES</span><br>
+       <span class="zpixel zbtnspan">00 : 04 : 54</span><br>
+       <span id="zplayButton6" class="zpixel zbtnspan" style="display: none;">[ PLAY ]</span>
+    </button>
+    <button style="color: white;" id="zbruiseboybtn" class="zmainbtn" onmouseover="showPlayButton7(); showPlayButton77(event)" onmouseout="hidePlayButton7(); hidePlayButton77()">
+       <span class="zpixel zbtnspan">BRUISE BOY</span><br>
+       <span class="zpixel zbtnspan">00 : 05 : 42</span>
+       <span id="zplayButton7" class="zpixel zbtnspan" style="display: none;">[ PLAY ]</span>
+    </button>
+
+    <!--마우스 올렸을 때 화면 왼쪽 아래 나타나는 크레딧-->
+    <div id="zwholecredit">
+    <div id="zcreditdummy" style="display: none;" onmouseover="showPlayButton()" onmouseout="hidePlayButton()">
+      <span>DIRECTOR: ZACHARY BAILEY</span><span></span><br>
+      <span>CREATIVE DIRECTOR: JEAN DAWSON</span><span></span><br>
+        <span>PRODUCER: SHO SCHROCK</span><span></span><br>
+        <span>PRODUCTION COMPANY: TRIKON PRODUCTIONS</span><span></span><br>
+       <span> PRODUCTION COORDINATOR: MICHAEL NICHOLAS</span><span></span><br>
+      <span> DIRECTOR OF PHOTOGRAPHY: NEEMA SADEGHI<span></span></span>
+    </div>
+    <div id="zcreditdummy2" style="display: none;" onmouseover="showPlayButton2()" onmouseout="hidePlayButton2()">
+       <span>DIRECTOR: ZACHARY BAILEY</span><span></span><br>
+       <span>CREATIVE DIRECTOR: JEAN DAWSON</span><span></span><br>
+       <span>PRODUCER: SHO SCHROCK</span><span></span><br>
+       <span>PRODUCTION COMPANY: TRIKON PRODUCTIONS</span><span></span><br>
+       <span>PRODUCTION COORDINATOR: MICHAEL NICHOLAS</span><span></span><br>
+       <span>DIRECTOR OF PHOTOGRAPHY: NEEMA SADEGHI</span><span></span>
+    </div>
+    <div id="zcreditdummy3" style="display: none;" onmouseover="showPlayButton3()" onmouseout="hidePlayButton3()">
+        <span>DIRECTOR: ZACH MADDEN</span><span></span><br>
+        <span>CREATIVE DIRECTOR: JEAN DAWSON, MOWGLY IJL</span><span></span><br>
+        <span>PRODUCER: SHO SCHROCK</span><span></span><br>
+        <span>PRODUCTION COMPANY: TRIKON PRODUCTIONW</span><span></span><br>
+        <span>DIRECTOR OF PHOTOGRAPHY: JOANNA NGUYEN</span><span></span><br>
+        <span>EDITOR AND VISUAL EFFECTS: MOWGLY LEE</span><span></span>
+    </div>
+    <div id="zcreditdummy4" style="display: none;" onmouseover="showPlayButton4()" onmouseout="hidePlayButton4()">
+        <span>PERFORMED BY JEAN DAWSON</span><span></span><br>
+        <span>DIRECTED BY JULIAN KLINCEWICZ</span><span></span><br>
+        <span>FILMED BY JULIAN KLINCEWICZ</span><span></span><br>
+        <span>GAFFER: MIKAYEL</span><span></span><br>
+        <span>ASST. CAMERA: ZACHARY BAILEY</span><span></span><br>
+        <span>STYLED BY JEAN DAWSON</span><span></span>
+    </div>
+    <div id="zcreditdummy5" style="display: none;" onmouseover="showPlayButton5()" onmouseout="hidePlayButton5()">
+        <span>DIRECTED BY ZACHARY BAILEY, MIKAYEL</span><span></span>
+    </div>
+    <div id="zcreditdummy6" style="display: none;" onmouseover="showPlayButton6()" onmouseout="hidePlayButton6()">
+        <span>DIRECTOR: ZACHARY BAILEY</span><span></span><br>
+        <span>CREATIVE DIRECTOR: JEAN DAWSON</span><span></span><br>
+        <span>PRODUCER: SOHAIB ALI</span><span></span><br>
+        <span>DP: NEEMA SADEGHI</span><span></span><br>
+        <span>EDITOR: ZACHARY DAILEY/ LOUIS CELANO</span><span></span><br>
+        <span>STARRING: JEAN DAWSON, JAE UNGER, ZACH FOGARTY, ORCHIN, BOYLIFE</span><span></span>
+    </div>
+    <div id="zcreditdummy7" style="display: none;" onmouseover="showPlayButton7()" onmouseout="hidePlayButton7()">
+        <span>DIRECTED BY ZACHARY BAILEY, MIKAYEL</span><span></span>
+    </div>
+    </div>
+    </div>
+
+<!-- 찬우님꺼 끝 -->
+
+<!-- 동현 시작 -->
+<div id="dong">
+    <!-- DISCOGRAPHY_ -->
+    <div id="content1">
+        <h2 style="color: white; font-size: 24px;" >DISCOGRAPHY <sapn class="blink">_</sapn></h2>
+        <!-- 공백 -->
+        <div id="gap" style="height: 20px;"></div>
+        <div id="content1-1">
+            <div class="first"><span>PIXEL BATH</span><span></span></div>
+            <div class="second"><span>01</span><span></span></div>
+            <div class="third"><span>DEVILISH</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 34</span><span></span></div>
+            <div class="five-times"><span>2020</span><span></span></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>02</span><span></span></div>
+            <div class="third"><span>RIPLE DOUBLE FT A$AP ROCKY</span><span></span></div>
+            <div class="four-times"><span>00 : 02 : 55</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1"> 
+            <div class="first"></div>
+            <div class="second"><span>03</span><span></span></div>
+            <div class="third"><span>SHINER</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 32</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>04</span><span></span></div>
+            <div class="third"><span>DUMMY</span><span></span></div>
+            <div class="four-times"><span>00 : 03 : 19</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>05</span><span></span></div>
+            <div class="third"><span>BRUISE BOY</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 34</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>06</span><span></span></div>
+            <div class="third"><span>PEGASUS</span><span></span></div>
+            <div class="four-times"><span>00 : 02 : 55</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>07</span><span></span></div>
+            <div class="third"><span>POSTER SHILD</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 32</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>08</span><span></span></div>
+            <div class="third"><span>06 BURST</span><span></span></div>
+            <div class="four-times"><span>00 : 03 : 19</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>09</span><span></span></div>
+            <div class="third"><span>STARFACE*</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 34</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>10</span><span></span></div>
+            <div class="third"><span>POLICIA</span><span></span></div>
+            <div class="four-times"><span>00 : 02 : 55</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>11</span><span></span></div>
+            <div class="third"><span>CLEAR BONES</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 32</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>12</span><span></span></div>
+            <div class="third"><span>POWER FREAKS</span><span></span></div>
+            <div class="four-times"><span>00 : 03 : 19</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>13</span><span></span></div>
+            <div class="third"><span>PYROTECHNICS</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 11</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <!-- 공백 -->
+        <div id="gap"></div>
+        <div id="content1-1">
+            <div class="first"><span>OOGA BOOGA</span><span></span></div>
+            <div class="second"><span>01</span><span></span></div>
+            <div class="third"><span>OOGA BOOGA</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 34</span><span></span></div>
+            <div class="five-times"><span>2019</span><span></span></div>
+        </div>
+        <!-- 공백 -->
+        <div id="gap"></div>
+        <div id="content1-1">
+            <div class="first"><span>BAD SPORTS</span><span></span></div>
+            <div class="second"><span>01</span><span></span></div>
+            <div class="third"><span>FLIRTING*</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 34</span><span></span></div>
+            <div class="five-times"><span>2019</span><span></span></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>02</span><span></span></div>
+            <div class="third"><span>NAPSTER</span><span></span></div>
+            <div class="four-times"><span>00 : 02 : 55</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>03</span><span></span></div>
+            <div class="third"><span>SSICK GIRL ONLINE</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 32</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>04</span><span></span></div>
+            <div class="third"><span>BLAME BY ME</span><span></span></div>
+            <div class="four-times"><span>00 : 03 : 19</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>05</span><span></span></div>
+            <div class="third"><span>90'S GREEN SCREEN</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 34</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>06</span><span></span></div>
+            <div class="third"><span>ZERO%</span><span></span></div>
+            <div class="four-times"><span>00 : 02 : 55</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>07</span><span></span></div>
+            <div class="third"><span>PITY PARTY</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 32</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>08</span><span></span></div>
+            <div class="third"><span>MALA MARIPOSA</span><span></span></div>
+            <div class="four-times"><span>00 : 03 : 19</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>09</span><span></span></div>
+            <div class="third"><span>BULL FIGHTER</span><span></span></div>
+            <div class="four-times"><span>00 : 01 : 34</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+        <div id="content1-1">
+            <div class="first"></div>
+            <div class="second"><span>10</span><span></span></div>
+            <div class="third"><span>ANTIWARP</span><span></span></div>
+            <div class="four-times"><span>00 : 02 : 55</span><span></span></div>
+            <div class="five-times"></div>
+        </div>
+    </div>
+    <!-- MUSIC UIDEO INDEX -->
+    <div id="content2">
+    <h2 style="color: white; font-size: 24px;" >MUSIC UIDEO INDEX <sapn class="blink">_</sapn></h2>
+    <!-- 공백 -->
+    <div id="gap" style="height: 20px;"></div>
+    <div id="content1-2">
+        <div class="first2"><span>01</span><span></span></div>
+        <div class="third2"><span>DUMMY</span><span></span></div>
+        <div class="four-times2"><span>00 : 03 : 07</span><span></span></div>
+        <div class="five-times2"><span>2021</span><span></span></div>
+    </div>
+    <div id="content1-2">
+        <div class="first2"><span>02</span><span></span></div>
+        <div class="third2"><span>DEUILISH</span><span></span></div>
+        <div class="four-times2"><span>00 : 01 : 34</span><span></span></div>
+        <div class="five-times2"><span>2020</span><span></span></div>
+    </div>
+    <div id="content1-2"> 
+        <div class="first2"><span>03</span><span></span></div>
+        <div class="third2"><span>STARFACE*</span><span></span></div>
+        <div class="four-times2"><span>00 : 01 : 34</span><span></span></div>
+        <div class="five-times2"><span>2020</span><span></span></div>
+    </div>
+    <div id="content1-2">
+        <div class="first2"><span>04</span><span></span></div>
+        <div class="third2"><span>90'S GRREN SCREEN</span><span></span></div>
+        <div class="four-times2"><span>00 : 05 : 42</span><span></span></div>
+        <div class="five-times2"><span>2020</span><span></span></div>
+    </div>
+    <div id="content1-2">
+        <div class="first2"><span>05</span><span></span></div>
+        <div class="third2"><span>POWER FREAKS</span><span></span></div>
+        <div class="four-times2"><span>00 : 02 : 15</span><span></span></div>
+        <div class="five-times2"><span>2020</span><span></span></div>
+    </div>
+    <div id="content1-2">
+        <div class="first2"><span>06</span></div>
+        <div class="third2"><span>CLEAR BONES</span></div>
+        <div class="four-times2"><span>00 : 04 : 54</span></div>
+        <div class="five-times2"><span>2020</span></div>
+    </div>
+    <div id="content1-2">
+        <div class="first2"><span>07</span><span></span></div>
+        <div class="third2"><span>BRUISE BOY</span><span></span></div>
+        <div class="four-times2"><span>00 : 05 : 42</span><span></span></div>
+        <div class="five-times2"><span>2020</span><span></span></div>
+    </div>
+    </div>
+    <!-- PRESS -->
+    <div id="content3">
+    <h2 style="color: white; font-size: 24px;" >PRESS <sapn class="blink">_</sapn></h2>
+    <!-- 공백 -->
+    <div id="gap" style="height: 20px;"></div>
+    <div id="content1-3">
+        <div class="first3"><span>BBC RADIO 1</span></div>
+        <div class="second3"><span>RADIO 1'S FUTURE APTISTS WITH JACK SAUNDERS - 'NEXT WAVE' INTERUIEN WITH DEAN DAWSON</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>THE ZANE LOWE SHOW</span></div>
+        <div class="second3"><span>AUDIO PREMIERE OF 'STARFACE*'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>THE FADER</span></div>
+        <div class="second3"><span>'STARFACE*' INDLUDED IN WEEKLY ROUND UP 'SONGS YOU NEED'.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+
+    <div id="content1-3">
+        <div class="first3"><span>THE FADER</span></div>
+        <div class="second3"><span>'POWER FREAKS' INCLUDED IN 'BEST NEW SONGS' PLAYLIST.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>THE FADER</span></div>
+        <div class="second3"><span>'BRUISE BOY' UIDED PREMIERE.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>NME</span></div>
+        <div class="second3"><span>'STARFACE*' + PIXEL BATH NEWS POST.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>NME</span></div>
+        <div class="second3"><span>ONLINE INTERUIEN WITH JEAN</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>NME</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN WEEKLY MUSIC ROUND UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>'STARFACE*' INSTAGRAM POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>'STARFACE*' TWITTER POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>'STARFACE*' FACEBOOK POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>'CLEAR BONES' INSTAGRAM POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>'CLEAR BONES' TWITTER POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>'CLEAR BONES' FEATURED IN THE COVER OF 'PIGEONS 8 PLANES WEEKLY' PLATLIST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>ONLINE INTERVIEW WITH JEAN.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>FEAN INCLUDED IN '21 NEW ARTISTS TO WATCH IN 2020'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>JEAN INCLUDED IN 'BEST NEW ARTIST - AUGUST 2019'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PIGEONS & PLANES / COMPLEX</span></div>
+        <div class="second3"><span>'BAD SPORTS' INCLUDED IN 'THE ROTATION' ROUND UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>DIY MAFAZINE</span></div>
+        <div class="second3"><span>'STARFACE*' + PIXEL BATH NEWS POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>REMEZCLA</span></div>
+        <div class="second3"><span>'STARFACE*' INCLUDED IN WEEKLY ROUND UP 'NEW MUSIC WE'RE LISTENING TO THIS WEEK'.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>REMEZCLA</span></div>
+        <div class="second3"><span>'POWER FREAKS' INCLUDED IN 'NUEUO NOISE' ROUND UP</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>REMEZCLA</span></div>
+        <div class="second3"><span>'BRUISE BOY' INCLUDED IN 'NUEVO NOISE' ROUND UP</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>ONES TO WATCH</span></div>
+        <div class="second3"><span>'STARFACE*' NEWS POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>ONES TO WATCH</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN '#NEWWATCHING' PLAYLIST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>ONES TO WATCH</span></div>
+        <div class="second3"><span>NEWS POST COVERING 'CLEAR BONES.'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>ONES TO WATCH</span></div>
+        <div class="second3"><span>'POWER FREAKS' UIDEO AND SONG WRITE UP</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>ONES TO WATCH</span></div>
+        <div class="second3"><span>JEAN FEATURED IN 'ARTISTS YOU SHOULD LISTEN TO NOW' PIECE</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>ONES TO WATCH</span></div>
+        <div class="second3"><span>'BRUISE BOY' WRITE UP FEATURE</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>SNIFFERS</span></div>
+        <div class="second3"><span>'STARFACE*' + PIXEL BATH NEWS POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>WE ARE: THE GUARD</span></div>
+        <div class="second3"><span>'STARFACE*' INCLUDED IN WEEKLY ROUND UP 'THE 10 TOP INDIE SONGS WE'RE LOVING THIS WEEK'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>WE ARE THE GUARD</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN WEEKLY ROUND UP 'THE 10 TOP INDIE SONGS YOU YOU NEES IN YOUR EARS THIS WEEK'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>WE ARE THE GUARD</span></div>
+        <div class="second3"><span>'BRUISE BOY' AND 'POWER FREAKS' WRITE UP</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>BEATS PER MINUTE</span></div>
+        <div class="second3"><span>'STARFACE*' + PEXEL BATH NEWS POST.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>WORLD WIDE WAVES</span></div>
+        <div class="second3"><span>'STARFACE*' NEWS POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>MTV NEWS</span></div>
+        <div class="second3"><span>ONLINE INTERVIEW WITH JEAN.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>MTV NEWS</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN WEEKLY ROUND UP 'BOP SHOP'.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>GRAMMY</span></div>
+        <div class="second3"><span>ONLINE INTERVIEW WITH JEAN ON BLACK LATINX ARTISTS.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>NPR</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN 'WEEKEND EAITION SUNDAY.'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>NPR</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN 'ART.LATINO'S SUMMER MUSIC HAUL.'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>NPR</span></div>
+        <div class="second3"><span>'BRUISE BOY' INCLUDED IN 'STORYTELLING AND TIME TRAVELING' PLAYLIST.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>NPR</span></div>
+        <div class="second3"><span>'NAPSTER' INCLUDED IN 'ALT. LATINO LOOKS BACK AT THE BEST AT THE BEST MUSIC OF 2019'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>TEEN VOGUE</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN 'NEW MUSIC FRIDAY' ROUND UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>I-D</span></div>
+        <div class="second3"><span>'10 THINGS' FEATURE + 'CLEAR BONES' UIDEO PREMIERE.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>I-D</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN 'BEST NEW MUSIC THIS WEEK' MUSIC ROUND-UP</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>HYPEBEAST</span></div>
+        <div class="second3"><span>'CLEAR BONES' UIDEO + SONG NEWS POST.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>HYPEBEAST</span></div>
+        <div class="second3"><span>'POLICIA' SONG NEWS POST.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>HYPEBEAST</span></div>
+        <div class="second3"><span>'POWER FREAKS' UIDEO PREMIERE.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>NYLON</span></div>
+        <div class="second3"><span>'POWER FREAKS' INCLUDED IN 'SOUNDCHECK' PLAYLIST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>ESSENCE</span></div>
+        <div class="second3"><span>'BRUISE BOY' INCLUDED IN BEST MUSIC ROUND UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>ESSENCE</span></div>
+        <div class="second3"><span>'90'S GREEN SCREEN' INCLUDED IN 'THE PLAYLIST'</span></div>
+        <div class="third3"><span>2019</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>ESSENCE</span></div>
+        <div class="second3"><span>ONLINE INTERVIEW WITH JEAN.</span></div>
+        <div class="third3"><span>2019</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>OFFICE</span></div>
+        <div class="second3"><span>90'S GREEN SCREEN' PREMIERE.</span></div>
+        <div class="third3"><span>2019</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>PAPER</span></div>
+        <div class="second3"><span>'POWER FREAKS' INCLUDED IN 'BOPS ONLY'.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>THE LINE OF BEST FIT</span></div>
+        <div class="second3"><span>'CLEAR BONES' NEWS POST</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>THE LINE OF BEST FIT</span></div>
+        <div class="second3"><span>'POWER FREAKS' VIDEO WRITE UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>FLAUNT</span></div>
+        <div class="second3"><span>'NAPSTER' PREMIERE.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>AC DIA</span></div>
+        <div class="second3"><span>IN DEPTH POST COVERING 'CLEAR BONES'.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>OC WEEKLY</span></div>
+        <div class="second3"><span>INTERVIEW WITH JEAN.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>LYRICAL LEMONADE</span></div>
+        <div class="second3"><span>'POWER FREAKS' VIDEO AND SONG WRITE UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>LYRICAL LEMONADE</span></div>
+        <div class="second3"><span>'BRUISE BOY' VIDEO AND SONG WRITE UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>EARMIK</span></div>
+        <div class="second3"><span>'NEW POST COVERIG 'CLEAR BONES'.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>EARMIK</span></div>
+        <div class="second3"><span>'BAD SPORTS' RELEASE NEWS PIECE.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>EARMIK</span></div>
+        <div class="second3"><span>'90'S GREEN SCREEN' VIDEO WRITE UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>EARMIK</span></div>
+        <div class="second3"><span>'NAPSTER' AND 'MEMORY IS SOFTWARE' WRITE UP.</span></div>
+        <div class="third3"><span>2019</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>EARMIK</span></div>
+        <div class="second3"><span>'BULLFIGHTER' SONG PREMIERE.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>EARMIK</span></div>
+        <div class="second3"><span>'MEMORY IS SOFTWARE' WRITE UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>GORILLA VS. BEAR</span></div>
+        <div class="second3"><span>'MEMORY IS SOFTWARE' WRITE UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>BROADWAY WORLD</span></div>
+        <div class="second3"><span>'GLACIER GALLERY' RELEASE WRITE UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>THE DAILY NEBRASKAN</span></div>
+        <div class="second3"><span>JEAN WAS INCLUDED IN '9 MUSIC ARTISTS TO KEEP AN EYE ON IN 2020'</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>CULNESS CO</span></div>
+        <div class="second3"><span>NEWS POST COVERING 'CLEAR BONES'.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>THE FORTY-FIVE</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN WEEKLY ROUND UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    <div id="content1-3">
+        <div class="first3"><span>CHICAGO HAZE</span></div>
+        <div class="second3"><span>'CLEAR BONES' INCLUDED IN WEEKLY ROUND UP.</span></div>
+        <div class="third3"><span>2020</span></div>
+    </div>
+    </div>
+    <!-- footer -->
+    <div id="footer">
+    <div id="footer1">
+        <div class="first1"><span>TW</span><span></span></div>
+        <div class="second1"><span>@JEANDAWSON</span><span></span></div>
+        <div class="third1"><span>SPOITFY</span><span></span></div>
+        <div class="four-times1"><span>YOUTUBE</span><span></span></div>
+    </div>
+    <div id="footer1">
+        <div class="first1"><span>IG</span><span></span></div>
+        <div class="second1"><span>@JEANDAWSON</span><span></span></div>
+        <div class="third1"><span>SOUNDCLOUD</span><span></span></div>
+        <div class="four-times1"><span>ITUNES</span><span></span></div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

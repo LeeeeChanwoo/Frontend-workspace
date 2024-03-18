@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kream_exhibition</title>
+    <link href="kream_exhibition.css" rel="stylesheet">
+</head>
+<style>
+    #header>div {
+        height: 100px;
+        display: flex;
+    }
+
+    #header {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+
+    div {
+        
+        box-sizing: border-box;
+        /* 
+                지금부터 지정하는 가로세로길이는 테두리까지 포함한 길이임을 의미
+            */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    .container,
+    .header {
+        width: 50%;
+        height: 80px;
+        margin: 0 auto;
+        display: flex;
+        /* */
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .container .nav ul li {
+        display: inline-block;
+        margin: 0px 10px;
+        text-decoration: none;
+        color: black;
+    }
+
+
+    .container .nav ul li a:hover {
+        color: gray;
+
+    }
+
+    .logo {
+        position: absolute;
+        padding-top: 20px;
+        
+        transform: translate(-650px,-0px);
+    }
+
+    .wrap .header1 ul li {
+        display: inline-block;
+        margin: 0 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 12px;
+
+    }
+
+    .wrap1 .header2 ul li {
+        display: inline-block;
+        margin: 0 5px;
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+        padding-top: 10px;
+        padding-left: 30px;
+
+    }
+
+    .wrap1 .header2 ul li a:hover {
+        color: gray;
+    }
+
+    body {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1024px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .footer {
+        
+        border-top: 1px solid #ebebeb;
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, AppleSDGothicNeo-Regular, NanumBarunGothic, NanumGothic, 나눔고딕, Segoe UI, Helveica, Arial, Malgun Gothic, Dotum, sans-serif;
+        color: #222;
+        width: 1024px;
+        height: 503px;
+    }
+
+    .inner {
+        
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    .service_area {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        flex-direction: row-reverse;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        padding-bottom: 56px;
+        height: 148.666px;
+    }
+
+    .customer_service {
+        margin: 0;
+        padding: 0;
+        display: block;
+        margin-top: 2%;
+    }
+
+    .service_title {
+        display: inline-flex;
+        -webkit-box-align: center;
+        align-items: center;
+        font-size: 16px;
+        letter-spacing: -.16px;
+        font-weight: 700;
+    }
+
+    .service_time {
+        padding-top: 8px;
+        box-sizing: border-box;
+        width: 267px;
+        height: 40px;
+        font-size: 13px;
+        letter-spacing: -.07px;
+        color: rgba(34, 34, 34, .5);
+        max-width: 263px;
+        line-height: 20px;
+    }
+
+    .service_noti {
+        padding-top: 8px;
+        font-size: 13px;
+        letter-spacing: -.07px;
+        display: block;
+    }
+
+    .service_btn_box {
+        padding-top: 17px;
+        cursor: pointer;
+    }
+
+    .width_box {
+        width: 160px;
+    }
+
+    .menu_box+.menu_box {
+        margin-left: 80px;
+    }
+
+    .menu_box {
+        display: inline-flex;
+        height: 148.667;
+    }
+
+    .menu_title {
+        font-size: 16px;
+        letter-spacing: -.16px;
+    }
+
+    .footer_menu {
+        display: flex;
+
+    }
+
+    .menu_list {
+        padding-top: 16px;
+        display: list-item;
+        text-align: -webkit-match-parent;
+        cursor: pointer;
+
+    }
+
+
+    .menu_item {
+        font-size: 14px;
+        letter-spacing: -.21px;
+        color: rgba(34, 34, 34, .5);
+        margin-block-start: 1em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 100px;
+        padding-inline-start: 0;
+    }
+
+    .corporation_area {
+        position: relative;
+        margin-top: 70px;
+       
+    }
+
+    .term_list {
+        
+        padding-bottom: 16px;
+        display: inline-flex;
+        width: 339.010px;
+        box-sizing: border-box;
+        margin-block-end: 1em;
+
+    }
+
+    .term_item {
+        display: block;
+        font-size: 14px;
+        letter-spacing: -.21px;
+        color: #000;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .term_item_p {
+        display: block;
+        font-size: 14px;
+        letter-spacing: -.21px;
+        color: #000;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .footer_sns {
+        
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .business_info {
+        float: left;
+        line-height: 20px;
+        font-size: 13px;
+        letter-spacing: -.07px;
+        color: rgba(34, 34, 34, .5);
+        margin-right: 4px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .notice_area {
+        padding-top: 40px;
+        -webkit-box-align: end;
+        align-items: flex-end;
+
+    }
+
+    .notice {
+        max-width: 605px;
+        font-size: 12px;
+        letter-spacing: -.06px;
+        color: rgba(34, 34, 34, .4);
+    }
+
+
+
+    .style_title {
+        padding-left: 16px;
+        padding-right: 16px;
+        font-size: 20px;
+        letter-spacing: -.1px;
+        color: #222;
+    }
+
+    div {
+        display: block;
+    }
+
+    .notice {
+        float: left;
+        line-height: 20px;
+        font-size: 13px;
+        letter-spacing: -.07px;
+        color: rgba(34, 34, 34, .5);
+        margin-right: 4px;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    .user_name {
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        bottom: 12px;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 13px;
+        color: #fff;
+        z-index: 10;
+    }
+
+    .person {
+        border-radius: 5%;
+    }
+
+
+    #right {
+        position: absolute;
+        margin-left: 330%;
+    }
+    .aaa{
+        position:fixed;
+        top:0px; 
+        background-color: white;
+        width: 100%;
+            height: 140px;
+    }
+</style>
+
+<body>
+<div class="aaa">
+    <div class="wrap">
+        <div class="header1">
+            <ul>
+                <li><a href="">고객센터</a></li>
+                <li><a href="">관심상품</a></li>
+                <li><a href="">로그인</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="https://kream.co.kr/">
+                    <img src="resource1/kream.png" alt="" width="100px" height="30">
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">STYLE</a></li>
+                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">MY</a></li>
+                    <li><a href="#"><img id="img" src="resource1/do.png" width="40" height="40"></a></li>
+                    <!-- <li><a href="#">HOME</a></li> -->
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="wrap1">
+        <div class="header2">
+            <ul>
+                <li><a href="">추천</a></li>
+                <li><a href="">랭킹</a></li>
+                <li><a href="">남성</a></li>
+                <li><a href="">여성</a></li>
+                <li><a href="">브랜드</a></li>
+                <li><a href="">기획전</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="wraper">
+        <div class="content">
+            <a href="https://kream.co.kr/exhibitions/1104" style="text-decoration: none;">
+                <img src="images/exhibition1.png" class="img1">
+            </a>
+            <a href="https://kream.co.kr/exhibitions/1160" style="text-decoration: none;">
+                <img src="images/exhibition2.png" class="img1">
+            </a>
+            <a href="https://kream.co.kr/exhibitions/1168" style="text-decoration: none;">
+                <img src="images/exhibition3.png" class="img1">
+            </a>
+        </div>
+        <div class="content2">
+
+            <div class="product1">
+                <a href="https://kream.co.kr/exhibitions/1104" style="text-decoration: none; color: black;">
+                    <div class="title">Gift of the Month</div>
+                    <div class="name">5월을 위한 이상적인 선물 추천</div>
+                </a>
+            </div>
+
+            <div class="product2">
+                <a href="https://kream.co.kr/exhibitions/1160" style="text-decoration: none; color: black;">
+                    <div class="title">줌인리뷰 2차</div>
+                    <div class="name">#줌인리뷰 태그하면 최대 5만 5천 포인트!</div>
+                </a>
+            </div>
+
+            <div class="product3">
+                <a href="https://kream.co.kr/exhibitions/1168" style="text-decoration: none; color: black;">
+                    <div class="title">LE17SEPTEMBRE 23SS</div>
+                    <div class="name">5% 구매적립 & 무료배송</div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="wraper">
+        <div class="content">
+            <a href="https://kream.co.kr/exhibitions/1104" style="text-decoration: none;">
+                <img src="images/exhibition4.png" class="img1">
+            </a>
+            <a href="https://kream.co.kr/exhibitions/1160" style="text-decoration: none;">
+                <img src="images/exhibition5.png" class="img1">
+            </a>
+            <a href="https://kream.co.kr/exhibitions/1168" style="text-decoration: none;">
+                <img src="images/exhibition6.png" class="img1">
+            </a>
+        </div>
+        <div class="content2">
+
+            <div class="product4">
+                <a href="https://kream.co.kr/exhibitions/1167" style="text-decoration: none; color: black;">
+                    <div class="title">조던 1x 스캇 컬렉션 구매 프로모션</div>
+                    <div class="name">해당 상품 구매 시 선착순 2만 포인트!</div>
+                </a>
+            </div>
+
+            <div class="product5">
+                <a href="https://kream.co.kr/exhibitions/1157" style="text-decoration: none; color: black;">
+                    <div class="title">KEEN요기&산타 콜라보 단독 발매</div>
+                    <div class="name">[-23.5.10] 신상 5% & 인기 샌들 10% 할인</div>
+                </a>
+            </div>
+
+            <div class="product6">
+                <a href="https://kream.co.kr/exhibitions/1155" style="text-decoration: none; color: black;">
+                    <div class="title">4월 계좌이체 포인트 적립 혜택</div>
+                    <div class="name">결제 당 1% 적립부터 수수료 할인까지</div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="wraper">
+        <div class="content">
+            <a href="https://kream.co.kr/exhibitions/1167" style="text-decoration: none;">
+                <img src="images/exhibition7.png" class="img1">
+            </a>
+            <a href="https://kream.co.kr/exhibitions/1157" style="text-decoration: none;">
+                <img src="images/exhibition8.png" class="img1">
+            </a>
+            <a href="https://kream.co.kr/exhibitions/1155" style="text-decoration: none;">
+                <img src="images/exhibition9.png" class="img1">
+            </a>
+        </div>
+        <div class="content2">
+
+            <div class="product7">
+                <a href="https://kream.co.kr/exhibitions/1156" style="text-decoration: none; color: black;">
+                    <div class="title">창고보관 판매 수수료 할인 이벤트</div>
+                    <div class="name">창고보관으로 구매한 상품 재판매 시 수수료 0.5%</div>
+                </a>
+            </div>
+
+            <div class="product8">
+                <a href="https://kream.co.kr/exhibitions/1125" style="text-decoration: none; color: black;">
+                    <div class="title">HALEINE Jewelry Collection</div>
+                    <div class="name">[23.4.24 - 4.30] 10% 할인 & 5% 구매적립 & 무료배송</div>
+                </a>
+            </div>
+
+            <div class="product9">
+                <a href="https://kream.co.kr/exhibitions/1141" style="text-decoration: none; color: black;">
+                    <div class="title">THE GREATEST 오픈</div>
+                    <div class="name">[23.4.24-4.30] 전 상품 20% 할인 & 5% 구매적립</div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="wraper">
+        <div class="content">
+            <a href="https://kream.co.kr/exhibitions/1124" style="text-decoration: none;">
+                <img src="images/exhibition10.png" class="img1">
+            </a>
+            <a href="https://kream.co.kr/exhibitions/1123" style="text-decoration: none;">
+                <img src="images/exhibition11.png" class="img1">
+            </a>
+            <a href="https://kream.co.kr/exhibitions/1127" style="text-decoration: none;">
+                <img src="images/exhibition12.png" class="img1">
+            </a>
+        </div>
+        <div class="content2">
+
+            <div class="product10">
+                <a href="https://kream.co.kr/exhibitions/1124" style="text-decoration: none; color: black;">
+                    <div class="title">NOT YOUR ROSE 오픈</div>
+                    <div class="name">[23.4.21 - 4.27] 최대 10% 할인 & 5% 구매적립</div>
+                </a>
+            </div>
+
+            <div class="product11">
+                <a href="https://kream.co.kr/exhibitions/1123" style="text-decoration: none; color: black;">
+                    <div class="title">SURGERY 프로세스 라인 단독 Drop</div>
+                    <div class="name">단독 발매 & 5% 구매적립 & 무료배송</div>
+                </a>
+            </div>
+
+            <div class="product12">
+                <a href="https://kream.co.kr/exhibitions/1127" style="text-decoration: none; color: black;">
+                    <div class="title">Gorpcore Look</div>
+                    <div class="name">믹스매치 최적화, 눈여겨볼 것!</div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="inner">
+
+
+
+            <div class="service_area">
+                <div class="customer_service">
+                    <strong class="service_title">고객센터 1588-7813</strong>
+                    <div class="service_time">운영시간 평일 11:00 - 18:00 (토∙일, 공휴일 휴무) 점심시간 평일 13:00 - 14:00</div>
+                    <P class="service_noti">1:1 문의하기는 앱에서만 가능합니다.</P>
+                    <div class="service_btn_box">
+                        <img src="resources/자주묻는질문.png" width="112px" height="34px">
+                    </div>
+                </div>
+                <div class="footer_menu">
+                    <div class="menu_box">
+                        <ul class="menu_list">
+                            <strong class="menu_title">이용안내</strong>
+                            <li class="menu_item">검수기준</li>
+                            <li class="menu_item">이용정책</li>
+                            <li class="menu_item">페널티 정책</li>
+                            <li class="menu_item">커뮤니티 가이드라인</li>
+                        </ul>
+                    </div>
+                    <div class="menu_box">
+                        <ul class="menu_list">
+                            <strong class="menu_title">고객지원</strong>
+                            <li class="menu_item">공지사항</li>
+                            <li class="menu_item">서비스 소개</li>
+                            <li class="menu_item">쇼룸 안내</li>
+                            <li class="menu_item">판매자 방문접수</li>
+                        </ul>
+
+                    </div>
+                
+                </div>
+            </div>
+            <div class="corporation_area">
+          
+                
+                <ul class="term_list">
+                    <li class="term_item">회사소개</li>
+                    <li class="term_item">인재채용</li>
+                    <li class="term_item">이용약관</li>
+                    <li class="term_item_p">개인정보처리방침</li>
+                </ul>
+                <div class="footer_sns">
+                    <img src="resources/sns아이콘.png" width="112px" height="24px">
+                </div>
+                <div class="business_info">
+                    크림 주식회사 · 대표 김창욱사업자등록번호 : 570-88-01618 사업자정보확인통신판매업 : 제 2021-성남분당C-0093호사업장소재지 : 경기도 성남시 분당구 분당내곡로
+                    131 판교테크원 타워1, 8층호스팅 서비스 : 네이버 클라우드 ㈜
+                </div>
+                <br><br><br><br>
+            </div>
+            <div class="notice_area">
+                <p class="notice">
+                    크림(주)는 통신판매 중개자로서 통신판매의 당사자가 아닙니다. 본 상품은 개별판매자가 등록한 상품으로 상품, 상품정보, 거래에 관한 의무와 책임은 각 판매자에게 있습니다. 단,
+                    이용약관 및 정책, 기타 거래 체결 과정에서 고지하는 내용 등에 따라 검수하고 보증하는 내용에 대한 책임은 크림(주)에 있습니다.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+
+            box-sizing: border-box;
+            /*바꾸면 안 됨*/
+            text-align: center;
+            /*바꾸면 안 됨*/
+            width: 1200px;
+            /*바꾸면 안 됨*/
+            margin: auto;
+        }
+
+        .territory {
+            /*헤더, 푸터 가로 길이 설정*/
+            border: 1px solid red;
+            width: 1200px;
+            /*바꾸면 안 됨*/
+            margin: auto;
+        }
+
+        ul>li {
+            list-style-type: none;
+        }
+
+        /*====================================================================================== */
+        /*======================================헤더=============================================*/
+        /*====================================================================================== */
+
+        header {
+            height: 64px;
+            /*바꾸면 안 됨*/
+        }
+
+
+
+
+        /*====================================================================================== */
+        /*======================================컨텐츠===========================================*/
+        /*====================================================================================== */
+        .content {
+            border: 1px solid red;
+            height: 1436px;
+            /*컨텐츠 영역 사이즈*/
+            width: 1200px;
+            /*바꾸면 안 됨*/
+            margin: auto;
+        }
+
+
+
+        .my_content {
+            border: 1px solid blue;
+            height: 94%;
+            width: 94%;
+            margin: 3% 3% 3% 3%;
+            display: flex;
+        }
+
+        /*====================================================================================== */
+        /*======================================컨텐츠 레프트 컨테이너===========================================*/
+        /*====================================================================================== */
+        .my_left_container {
+            /* border: 1px solid yellow; */
+            width: 20%;
+            height: 100%;
+            border-right: 1px solid gainsboro;
+        }
+
+
+        .my_left_container> :not(:first-child) {
+            margin-top: 9%;
+        }
+
+        .my_left_container [class$="-1"] {
+            text-align: left;
+            font-size: 28px;
+            line-height: 2.05;
+            font-weight: 600;
+            color: #40e0D0;
+        }
+
+
+
+        .my_left_container [class$="-2"],
+        .my_left_container [class$="-3"],
+        .my_left_container [class$="-4"],
+        .my_left_container [class$="-5"] {
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+
+
+
+        /*====================================================================================== */
+        /*======================================컨텐츠 라이트 컨테이너===========================================*/
+        /*====================================================================================== */
+        /* 나중에 삭제하고 left만 include 시키기 */
+
+        .my_right_container {
+            border: 1px solid green;
+            width: 80%;
+            height: 100%;
+        }
+
+        
+
+
+
+
+
+
+
+        /*====================================================================================== */
+        /*======================================푸터=============================================*/
+        /*====================================================================================== */
+        footer {
+            height: 440px;
+            /*바꾸면 안 됨*/
+            font-size: 11px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="territory">
+        <!-- <script>
+            fetch('header.html')
+              .then(response => response.text())
+              .then(data => {
+                const headerContainer = document.querySelector('.territory');
+                headerContainer.innerHTML = data;
+              });
+          </script> -->
+    </header>
+
+    <div class="content">
+        <div class="my_content">
+            <div class="my_left_container">
+
+                <div class="my_left_content1">
+
+                    <div class="my_left_content1-1">
+                        홈
+                    </div>
+                    <div class="my_left_content1-2">
+                        알림
+                    </div>
+                    <div class="my_left_content1-3">
+                        팔로잉 목록
+                    </div>
+
+                </div>
+
+
+                <div class="my_left_content2">
+
+                    <div class="my_left_content2-1">
+                        프로필
+                    </div>
+                    <div class="my_left_content2-2">
+                        내정보수정
+                    </div>
+                    <div class="my_left_content2-3">
+                        내가 쓴 글
+                    </div>
+                    <div class="my_left_content2-4">
+                        내가 쓴 댓글
+                    </div>
+
+                </div>
+
+
+                <div class="my_left_content3">
+
+                    <div class="my_left_content3-1">
+                        개발도우미
+                    </div>
+                    <div class="my_left_content3-2">
+                        todoList
+                    </div>
+                    <div class="my_left_content3-3">
+                        캘린더
+                    </div>
+                    <div class="my_left_content3-4">
+                        코드 실험실
+                    </div>
+
+                </div>
+
+
+                <div class="my_left_content4">
+
+                    <div class="my_left_content4-1">
+                        멘토링
+                    </div>
+                    <div class="my_left_content4-2">
+                        멘토 / 멘티 신청목록
+                    </div>
+                    <div class="my_left_content2-3">
+                        멘토 / 멘티 정보 등록 내역
+                    </div>
+
+                </div>
+
+
+                <div class="my_left_content5">
+
+                    <div class="my_left_content5-1">
+                        결제
+                    </div>
+                    <div class="my_left_content5-2">
+                        결제 내역
+                    </div>
+                    <div class="my_left_content2-3">
+                        환전 내역
+                    </div>
+
+                </div>
+
+                <div class="my_left_content6">
+
+                    <div class="my_left_content6-1">
+                        설정
+                    </div>
+                    <div class="my_left_content6-2">
+                        알림 설정
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <footer class="territory" id="footer">
+        <hr>
+        <br>
+        <a href="">공지사항</a> &nbsp;&nbsp;&nbsp;
+        <a href="">1:1 실시간 채팅</a>
+        <br>
+
+
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+#header>div {
+    height:100px;
+    display: flex;
+}
+
+#header{
+    font-size : 18px;
+    font-weight : 600;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+#k{
+    color: red;
+}

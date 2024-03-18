@@ -1,0 +1,287 @@
+body{
+    width: 1905px;
+    padding: 0;
+    margin: 0;
+}
+
+#content1-1>div{
+    color: white;
+    float: left;
+}
+
+#content1{
+    background-color: black;
+    width: 1905px;
+    height: 758.5px;
+    padding: 60.0625px 24px 0px;
+    box-sizing: border-box;
+}
+
+h2{
+    font-family: Pixter-Terminal;
+    font-weight: 50;
+    width: 100%;
+    height: 26.39px;
+    line-height: 15px;
+    font-size: 24px;
+    margin: 0px;
+}
+
+/* 깜빡이는 효과 */
+@keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+}
+  
+.blink {
+    animation: blink-effect 1s step-end infinite;
+}
+
+#content1>div{
+    width: 100%;
+    height: 25px;
+}
+
+.first{
+    width: 442.42px;
+    height: 25px;
+    font-size: 21px;
+    line-height: 20px;
+}   
+
+.second{
+    width: 62.53px;
+    height: 25px;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+.third{
+    width: 692.7px;
+    height: 25px;
+    font-size: 24px;
+    line-height: 15px;
+}
+
+.four-times{
+    width: 603.73px;
+    height: 25px;
+    font-size: 24px;
+    line-height: 15px;
+}
+
+.five-times{
+    width: 51.61px;
+    height: 25px;
+    font-size: 21px;
+    line-height: 20px;
+}
+
+.first, .second, .five-times{
+    font-family: Inklination Mono TRIAL;
+}
+
+.third, .four-times{
+    font-family: Pixter-Terminal;
+    font-weight: 50;
+}
+
+/* ---------------------------------------------------------- content1 끝 --------------------------------------------------------------------------- */
+
+#content2>div{
+    width: 100%;
+    height: 25px;
+}
+
+#content2{
+    background-color: black;
+    width: 1905px;
+    height: 296.48px;
+    padding: 78.0813px 24px 0px;
+    box-sizing: border-box;
+}
+
+#content1-2>div{
+    float: left;
+    color: white;
+}
+
+.first2, .five-times2{
+    font-family: Inklination Mono TRIAL;
+}
+
+.third2, .four-times2{
+    font-family: Pixter-Terminal;
+    font-weight: 50;
+}
+
+.first2{
+    width: 442.42px;
+    height: 24px;
+    font-size: 21px;
+    line-height: 20px;
+}
+
+.third2{
+    width: 755.23px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 15px;
+}
+
+#content1-2 span{
+    display: inline-block;
+}
+
+.four-times2{
+    width: 603.73px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 15px;
+}
+
+.five-times2{
+    width: 51.38px;
+    height: 24px;
+    font-size: 21px;
+    line-height: 20px;
+}
+
+/* ---------------------------------------------------------- content2 끝 --------------------------------------------------------------------------- */
+
+/* #content3>div{
+    width: 100%;
+    height: 25px;
+} */
+
+#content3{
+    background-color: black;
+    width: 1905px;
+    height: 1880.48px;
+    padding: 78.0813px 24px 0px;
+    box-sizing: border-box;
+}
+
+#content1-3>div{
+    float: left;
+    color: white;
+    height: 24px;
+}
+
+.first3, .third3{
+    font-family: Inklination Mono TRIAL;
+}
+
+.second3{
+    font-family: Pixter-Terminal;
+    font-weight: 50;
+}
+
+.first3{
+    width: 442.42px;
+    font-size: 21px;
+    line-height: 20px;
+}
+
+.second3{
+    width: 1359.14px;
+    font-size: 24px;
+    line-height: 15px;
+}
+
+.third3{
+    width: 51.38px;
+    font-size: 21px;
+    line-height: 20px;
+}
+
+/* .first3-1{
+    font-family: Inklination Mono TRIAL;
+    width: 442.42px;
+    font-size: 21px;
+    line-height: 45px;
+}
+
+.second3-1{
+    width: 1359.14px;
+    font-size: 24px;
+    line-height: 21px;
+    font-family: Pixter-Terminal;
+    font-weight: 50;
+    
+}
+
+.third3-1{
+    font-family: Inklination Mono TRIAL;
+    width: 51.38px;
+    font-size: 21px;
+    line-height: 45px;
+} */
+
+/* ---------------------------------------------------------- content3 끝 --------------------------------------------------------------------------- */
+
+#footer{
+    background-color: black;
+    width: 1905px;
+    height: 248.17px;
+    padding: 164.15px 24px 20px;
+    box-sizing: border-box;
+}
+
+#footer1>div{
+    float: left;
+    color: white;
+    height: 32px;
+}
+
+.first1{
+    width: 36.69px;
+    margin: 0px 54px 0px 0px;
+    font-size: 30px;
+    font-family: Inklination Mono TRIAL;
+    line-height: 30px;
+}
+
+.second1{
+    width: 1380px;
+    font-size: 30px;
+    font-family: Pixter-Terminal;
+    font-weight: lighter;
+    line-height: 20px;
+}
+
+.third1{
+    width: 240px;
+    font-size: 30px;
+    font-family: Pixter-Terminal;
+    font-weight: lighter;
+    line-height: 20px;
+}
+
+.four-times1{
+    width: 114px;
+    font-size: 30px;
+    font-family: Pixter-Terminal;
+    font-weight: lighter;
+    line-height: 20px;
+}
+
+/* ---------------------------------------------------------- footer 끝 --------------------------------------------------------------------------- */
+
+/* hover 이벤트 */
+
+#content1-1>div, #content1-2>div, #content1-3>div, #footer1>div{
+    cursor: pointer;
+}
+
+#content1-3 span{
+    height: 24px;    
+    display: inline-block;
+    background: linear-gradient(to right, white 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .25s ease-out;
+}
+
+

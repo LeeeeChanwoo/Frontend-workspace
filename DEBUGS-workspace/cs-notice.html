@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 1000px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        /* 메인 글씨 */
+        #faqmaintext {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* c/s 종류 버튼 */
+        .wholefaqmenu {
+            display: flex;
+            justify-content: center;
+
+        }
+
+
+
+        .faqmenu {
+            height: 40px;
+            width: 120px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            border-radius: 20px;
+            transition: transform 0.1s ease-in-out;
+            margin-bottom: 40px;
+            font-size: 15px;
+            
+        }
+        .faqmenu a{
+            text-decoration: none;
+            color: rgb(87, 86, 86);
+        }
+        .faqmenu a:hover{
+            color: #f36e8d;
+        }
+
+        #faqchoicemenu {
+            background-color: #f36e8d;
+        }
+
+        #faqchoicemenu a {
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        /* c/s 종류 버튼 끝*/
+
+
+
+
+
+        /* 검색창, 분류 */
+        .faqkind {
+            width: 250px;
+            height: 35px;
+            display: flex;
+            border-radius: 5px;
+            border-color: #d6d6d6;
+        }
+        #faq3search{
+            display: flex;
+            justify-content: center;
+        }
+        #faq3search input{
+            width: 350px;
+            height: 40px;
+            border-color: rgb(223, 219, 219);
+            transform: translate(-30px, 0px);
+            border-radius: 10px;
+            border: 1px solid rgb(231, 230, 230);
+                       
+        }
+        #faq3search img{
+            width: 25px;
+            height: 25px;
+            transform: translate(-10px, 5px);
+            margin-bottom: 70px;
+        }
+        /* 검색창, 분류 끝 */
+
+        /*표 시작 */
+        .faqlist {
+            text-align: center;
+            margin: auto;
+            border-collapse: collapse;
+            
+        }
+
+        .faqlist td {
+            
+            height: 50px;
+            border-bottom: 1px solid rgb(216, 215, 215);
+        }
+
+        .faqlist th {
+            background-color: #f36e8d;
+            color: #ffffff;
+            height: 32px;
+            border-bottom: 1px solid rgb(165, 165, 165);
+            border-top: 1px solid rgb(165, 165, 165);
+            
+        }
+
+        .faqlist>tbody>tr:hover {
+            background: rgb(252, 238, 238);
+            cursor: pointer;
+        }
+        
+        /* 표 끝*/
+        .listrow1 {
+            width: 100px;
+        }
+        
+        .listrow2 {
+            width: 200px;
+        }
+        
+        .listrow3 {
+            width: 700px;
+        }
+    
+    </style>
+</head>
+
+<body>
+
+    <h2 id="faqmaintext">고객센터</h2>
+
+    <div class="wholefaqmenu">
+        <div class="faqmenu" id="faqchoicemenu"><a href=""><b>공지사항</b></a></div>
+        <div class="faqmenu"><a href=""><b>FAQ</b></a></div>
+        <div class="faqmenu"><a href=""><b>1:1문의</b></a></div>
+        <div class="faqmenu"><a href=""><b>나의 문의내역</b></a></div>
+    </div>
+
+    <div id="faq3search">
+    <input type="text" name="faq3search" placeholder=" &nbsp;&nbsp;&nbsp;로그인이 되지 않아요.">
+    <img src="resources/search.png">
+    </div>
+
+
+    <select name="faqkind" class="faqkind">
+        <option value="1" selected>회원정보/로그인</option>
+        <option value="2">서비스/이용권 문의</option>
+        <option value="3">결제/해지/환불</option>
+        <option value="4">오류 문의</option>
+        <option value="5">이벤트</option>
+        <option value="6">음원요청</option>
+        <option value="7">기타</option>
+    </select>
+    <br>
+
+
+    
+
+
+
+    <table class="faqlist">
+        <thead>
+            <tr>
+                <th class=listrow1>No.</th>
+                <th class=listrow2>분류</th>
+                <th class=listrow3>제목</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr style="border-bottom: 1px solid black;">
+                <td>2</td>
+                <td>ㅀㅇㅀ</td>
+                <td>ㅇㅀㅇㅎ</td>
+
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>ㅇㅀㅇㄹ</td>
+                <td>ㅇㅀㅇㅀ</td>
+
+            </tr>
+
+
+        </tbody>
+
+    </table>
+    
+</body>
+
+</html>

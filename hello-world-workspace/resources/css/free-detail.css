@@ -1,0 +1,113 @@
+.main-text{
+    margin: 70px 652px 0px 0px ;
+    font-size: 40px;
+}
+
+/* 게시글 정보 테이블 시작 */
+#free-table{
+    font-size: 17px;
+
+    text-align: left;
+   margin : 80px 0px 40px 173px
+}
+.free-title{
+   width: 840px;
+}
+#free-table thead tr th{
+    padding: 5px;
+}
+#free-table tbody tr td{
+    padding-left: 5px;
+}
+.seeimg{
+    padding: 0px;
+    width: 26px;
+    height: 26px;
+    transform: translate(10px,3px);
+}
+/* 게시글 정보 테이블 끝 */
+
+
+
+
+/* 게시글 내용 시작 */
+.free-content{
+    font-size: 17px;
+    width: 800px;
+    border-radius: 10px;
+    border: 1px solid #48917A;
+    margin: 0 auto; 
+    text-align: left;
+    padding: 20px;
+    overflow:hidden;
+	height:auto;
+    min-height: 150px;
+}
+/* 게시글 내용 끝 */
+
+
+/* 신고하기 버튼 */
+#move-to-report{
+    margin-left: 750px;
+}
+#move-to-report a {
+    text-decoration: none;
+    color: #48917A;
+    font-size: 17px;
+
+} 
+
+/*목록,삭제 버튼*/
+#move-to-change {
+    height: 36px;
+    width: 114px;
+    background: #48917A;
+    border-radius: 10px;
+    margin-top: 32px;
+    margin-left: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    float: left;
+}
+
+#move-to-change a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#move-to-change  a:hover {
+    color: white;
+}
+ 
+
+#move-to-delete {
+    height: 36px;
+    width: 114px;
+    background: #DFF6ED;
+    border-radius: 10px;
+    margin-top: 32px;
+    margin-left:630px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#move-to-delete a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#move-to-delete a:hover {
+    color: white;
+}
+
+
+
+/*목록 삭제 버튼 끝*/

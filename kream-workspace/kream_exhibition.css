@@ -1,0 +1,31 @@
+.wraper{
+    width: 1024px;
+    height: 300px;
+    margin: 100px auto;
+   
+}
+
+
+.img1 {
+    border-radius : 10px;
+    width: 304px;
+    height : 175px;
+    float:left;
+    margin-right: 26px;
+}
+
+div{
+    box-sizing: border-box; 
+   
+}
+.wrap>div{ 
+    width: 100%;
+}
+.title{ font-size: 15px; font-weight: bolder; margin-top: 18px; width: 304px; height: 18px;}
+.name { font-size: 13px; color: #222222cC; margin-top: 4px;width: 304px; height: 17px;}
+
+.content2>div{
+    height: 100%;
+    float:left;
+    margin-right: 26px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+           
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        #csmaintext{
+            text-align: center;
+            font-size: 35px;
+        }
+        button{
+            width: 350px;
+            height: 350px;
+            background-color:  #fde8ed;
+            font-size: 39px;
+            border: 10px solid white;
+            border-radius: 37px;
+            font-weight: bolder;
+            float: left;
+        }
+        .goingcs{
+            font-size: 25px;
+            color: #7a7a7a;
+        }
+        button:hover{
+             transform: scale(1.1); /* 크기를 1.1배로 확대 */
+            background-color:  #ff3f6c;
+            color: white;
+            transition: transform 0.2s ease; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="csmaintext">고객센터</h1>
+    <br>
+    <button>공지사항 <br><br> <span class="goingcs">바로가기 >></span></button>
+    <button>자주 하는 질문 <br><br> <span class="goingcs">바로가기 >></span> </button>
+
+    <br clear="both">
+
+    <button>1:1 문의 <br><br> <span class="goingcs">바로가기 >></span></button>
+    <button>나의 문의 내역 <br><br> <span class="goingcs">바로가기 >></span></button>
+
+    <br clear="both">
+
+</body>
+</html>
